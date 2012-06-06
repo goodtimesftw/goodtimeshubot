@@ -12,22 +12,22 @@ module.exports = (robot) ->
       perpage: 100
       format: "json"
 
-      params.keywords = keywords if keywords?
-      params.location = location if location?
+    params.keywords = keywords if keywords?
+    params.location = location if location?
 
-      msg
-        .http("http://www.authenticjobs.com/api/")
-        .query(params)
-        .get() (err, res, body) ->
-          response = JSON.parse body
-          msg.send get_a_job msg, response
+    msg
+      .http("http://www.authenticjobs.com/api/")
+      .query(params)
+      .get() (err, res, body) ->
+        response = JSON.parse body
+        msg.send get_a_job msg, response
 
-          get_a_job = (msg, response) ->
-            listings = response.listings.listing
+get_a_job = (msg, response) ->
+  listings = response.listings.listing
 
-            if not listings.length
-              return "Sorry, I couldn't find you a job. Guess you're going to be broke for a while!"
+  if not listings.length
+    return "Sorry, I couldn't find you a job. Guess you're going to be broke for a while!"
 
-            random_listing = msg.random listings
+  random_listing = msg.random listings
 
-            "#{random_listing.title} at #{random_listing.company.name}. Apply at #{random_listing.apply_url or random_listing.apply_email}"
+  "#{random_listing.title} at #{random_listing.company.name}. Apply at #{random_listing.apply_url or random_listing.apply_email}"
