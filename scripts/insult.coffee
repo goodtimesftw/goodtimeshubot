@@ -3,7 +3,10 @@
 module.exports = (robot) ->
   robot.respond /insult (.*)/i, (msg) ->
     name = msg.match[1].trim()
-    msg.send(insult(name))
+    if name is 'hubot'
+      msg.send("Screw you, I'm fabulous")
+    else
+      msg.send(insult(name))
 
 insult = (name) ->
   insults[(Math.random() * insults.length) >> 0].replace(/{name}/, name);
