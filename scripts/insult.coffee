@@ -3,7 +3,6 @@
 module.exports = (robot) ->
   robot.respond /insult (.*)/i, (msg) ->
     name = msg.match[1].trim()
-    msg.send(msg)
     if name is 'hubot'
       msg.send("Screw you, I'm fabulous")
     else
