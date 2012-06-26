@@ -15,7 +15,7 @@
 #   Matt McCormick
 
 module.exports = (robot) ->
-  robot.respond /news (.*)i/, (msg) ->
+  robot.respond /news (.*)/i, (msg) ->
     msg.send("I hear ya dude!")
     query msg, (response, err) ->
       return msg.send err if err
