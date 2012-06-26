@@ -1,5 +1,5 @@
-# hubot insult <name> - give <name> the what-for
+# hubot news - complain about news request
 
 module.exports = (robot) ->
-  robot.respond /news (.*)/i, (msg) ->
+  robot.respond /news/, (msg) ->
     msg.send("Seriously?  You can't just go to http://news.google.com")
