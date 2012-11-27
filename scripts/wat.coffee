@@ -8,14 +8,15 @@
 #   None
 #
 # Commands:
-#   hubot wat - Random WAT
+#   wat - Random WAT
+#   wut - Random WAT
 #
 # Author:
 #   john-griffin
 
 module.exports = (robot) ->
 
-  robot.respond /wat/i, (msg) ->
+  robot.hear /(wat|wut)/i, (msg) ->
     msg.http("http://watme.herokuapp.com/random")
       .get() (err, res, body) ->
         msg.send JSON.parse(body).wat
