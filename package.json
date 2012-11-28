@@ -17,7 +17,9 @@
   "dependencies": {
     "hubot": "2.2.0",
     "hubot-scripts": ">=2.0.8",
-    "optparse": "1.0.3"
+    "optparse": "1.0.3",
+    "cheerio": "0.7.0",
+    "jsdom": "0.2.15"
   },
 
   "engines": {
