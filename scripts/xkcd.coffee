@@ -28,7 +28,5 @@ module.exports = (robot) ->
         else
           object = JSON.parse(body)
           msg.send object.title, object.img, object.alt
-          delay 3000, -> msg.send object.alt
+          msg.send object.alt
 
-
-  delay = (ms, func) -> setTimeout func, ms
