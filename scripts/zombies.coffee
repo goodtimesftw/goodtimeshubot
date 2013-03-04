@@ -13,18 +13,26 @@
 # Author:
 #   solap
 
-
-
-images = [
-  "http://24.media.tumblr.com/tumblr_m35jnyjTco1qikhvso1_100.gif",
-  "http://www.netanimations.net/head2.gif",
-  "http://www.netanimations.net/Animated-Zombie-Reverse.gif",
-  "http://www.freewebs.com/echoeyy/zombie%20getting%20shot.gif",
-  "https://i.chzbgr.com/maxW500/6360720640/h487AE90F/.gif",
-  "https://i.chzbgr.com/maxW500/5912815872/h8AB29CB2/.gif",
-  "https://i.chzbgr.com/maxW500/5299680512/h5120FD0B/.gif"
-  ]
+process.env.TAG_CLOUD_URL = 'http://tag-cloud.bmontague.com'
+process.env.TAG_CLOUD_TOKEN = 'goodtimesftw'
 
 module.exports = (robot) ->
   robot.hear /zombi(e|es)/i, (msg) ->
-    msg.send msg.random images
+    send_message msg, 'zombie-images'
+
+  send_message = (msg, tag) ->
+    msg.http(process.env.TAG_CLOUD_URL + '/api/random_mapped_value').query(token: process.env.TAG_CLOUD_TOKEN, tag: tag).get() (error, response, body) ->
+      if response.statusCode != 200
+        msg.send 'Something went wrong'
+        return
+
+      try
+        obj = JSON.parse(body)
+        if obj.value
+          msg.send obj.value
+          return
+      catch error
+        msg.send 'Some kind of parse error occured'
+        return
+
+      msg.send 'Please add some values to ' + tag
