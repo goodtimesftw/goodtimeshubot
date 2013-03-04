@@ -13,9 +13,6 @@
 # Author:
 #   solap
 
-process.env.TAG_CLOUD_URL = 'http://tag-cloud.bmontague.com'
-process.env.TAG_CLOUD_TOKEN = 'goodtimesftw'
-
 module.exports = (robot) ->
   robot.hear /zombi(e|es)/i, (msg) ->
     send_message msg, 'zombie-images'
