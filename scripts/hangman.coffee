@@ -100,7 +100,7 @@ class Game
 module.exports = (robot) ->
   gamesByRoom = {}
 
-  robot.respond /hangman( .*)?$|hm( .*)?$/i, (msg) ->
+  robot.respond /hangman|hm( .*)?$/i, (msg) ->
 
     if process.env.WORDNIK_API_KEY == undefined
       msg.send("Missing WORDNIK_API_KEY env variable.")

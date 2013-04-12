@@ -45,9 +45,9 @@
       "jsdom": "0.2.15",
       "tag-cloud-client": ">=0.0.3"
     },
-    "engines": {
-      "node": ">=0.8.x",
-      "npm": "1.1.x"
-    }
+	"engines": {
+	  "node": "= 0.8.21",
+	  "npm": "1.1.x"
+	}
 }
 
