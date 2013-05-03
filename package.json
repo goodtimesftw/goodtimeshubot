@@ -43,7 +43,7 @@
       "optparse": "1.0.3",
       "cheerio": "0.7.0",
       "jsdom": "0.2.15",
-      "tag-cloud-client": ">=0.0.3",
+      "tag-cloud-client": "0.0.4",
 	  "heroku": "x"
     },
     "engines": {
