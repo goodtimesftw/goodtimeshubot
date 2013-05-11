@@ -43,8 +43,8 @@
       "optparse": "1.0.3",
       "cheerio": "0.7.0",
       "jsdom": "0.2.15",
+      "hubot-tag-cloud": "0.0.1",
       "tag-cloud-client": "0.0.4",
-      "hubot-scripts-tag-cloud": "0.0.1",
       "heroku": "x"
     },
     "engines": {
