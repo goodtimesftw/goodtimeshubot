@@ -19,4 +19,4 @@ module.exports = (robot) ->
 	robot.hear /\b(out|I'm out|i'm out|Im out|im out)\b/i, (msg) ->
 		tag_cloud = new Client()
 		tag_cloud.GetRandomValue 'out-images', (data)->
-			msg.send data.value
+			if Math.random() < 0.1 then msg.send data.value
