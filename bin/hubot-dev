@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for ENV_DECL in `cat .env`
+do
+   export $ENV_DECL
+done
+
+./bin/hubot

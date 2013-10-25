@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo 'We will pull in enviromental variables that are in production right now'
+heroku config:pull
+
+echo 'Install node modules to start out.'
+npm install
+
