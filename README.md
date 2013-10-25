@@ -166,3 +166,15 @@ if you're having issues.
 ````bash
 heroku config:set HUBOT_ARCHER_SFW=true
 ````
+
+## Developing with goodtimeshubot
+You should first setup the .env file by running
+```bash
+ ./bin/setup
+```
+
+After that is setup you can run the following command to run Hubot with
+environmental variables
+```bash
+ ./bin/hubot-dev
+```
