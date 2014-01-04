@@ -2,7 +2,7 @@
 #   Looks up fat people's weight and finds out who's winning the competition
 #
 # Dependencies:
-#   "underscore": "1.3.3"
+#   None
 #
 # Configuration:
 #   HUBOT_FATTY_URL (format: "https://example.com:9000")
@@ -14,14 +14,10 @@
 # Author:
 #   jtslear
 
-_ = require 'underscore'
-
 getTheFatties = (fattyJson) -> 
   fatties = JSON.parse(fattyJson).stats
   fatty_output = ""
-  fatty_order = _.sortBy fatties, (fatty) -> fatty.percentage_lost
-  fatty_order = fatty_order.reverse()
-  for fatty in fatty_order
+  for fatty in fatties
     fatty_output += "#{fatty.email} - #{fatty.percentage_lost}%\n"
   fatty_output
   
