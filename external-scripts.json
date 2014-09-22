@@ -1,1 +1,4 @@
-["hubot-tag-cloud"]
+[
+  "hubot-tag-cloud",
+  "hubot-tell"
+]
